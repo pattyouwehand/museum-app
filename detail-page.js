@@ -1,4 +1,3 @@
-
 function submitComment() {
     const inputField = document.getElementById('name')
     const name = inputField.value
@@ -15,11 +14,27 @@ function submitComment() {
     comment.appendChild(h3)
     comment.appendChild(p)
 
-
     const commentSection= document.getElementById('comments');
     commentSection.appendChild(comment);
 
     inputField.value = null
     textArea.value = null
 
+    if(doesNotPassAll(name,msg)){
+        return null
+    };
+
+};
+
+
+function doesNotPassAll (name, msg) {
+    if(!name || !msg){
+        alert('You forgot to fill in your name or message!')
+    return true;
+    }
+    if(msg.length > 280){
+        alert('Your comment is too long')
+        return true
+    }
+        return false
 };
