@@ -15,7 +15,11 @@ function submitComment() {
     comment.appendChild(h3)
     comment.appendChild(p)
 
-    console.log(comment)
-};
 
-//.value leren en innerhtml!!
+    const commentSection= document.getElementById('comments');
+    commentSection.appendChild(comment);
+
+    inputField.value = null
+    textArea.value = null
+
+};
